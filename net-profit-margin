@@ -1,0 +1,3 @@
+SELECT (SUM(o.order_total) - SUM(od.total_cost)) / SUM(o.order_total) AS net_profit_margin
+FROM orders o
+JOIN order_details od ON o.order_id = od.order_id;
