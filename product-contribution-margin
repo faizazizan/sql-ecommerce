@@ -1,0 +1,4 @@
+SELECT product_id,
+       (SUM(order_total) - SUM(total_cost)) AS contribution_margin
+FROM order_details
+GROUP BY product_id;
