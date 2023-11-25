@@ -1,0 +1,2 @@
+SELECT AVG(order_total) AS average_order_value
+FROM orders;
