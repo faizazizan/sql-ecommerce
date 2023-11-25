@@ -1,0 +1,5 @@
+SELECT category, SUM(quantity) AS total_sold
+FROM products
+JOIN order_details ON products.product_id = order_details.product_id
+GROUP BY category
+ORDER BY total_sold DESC;
