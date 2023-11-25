@@ -1,0 +1,5 @@
+SELECT product_id, SUM(quantity) AS total_sold
+FROM order_details
+GROUP BY product_id
+ORDER BY total_sold DESC
+LIMIT N;
