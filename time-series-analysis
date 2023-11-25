@@ -1,0 +1,5 @@
+SELECT DATE_FORMAT(order_date, '%Y-%m-%d') AS date,
+       SUM(order_total) AS daily_revenue
+FROM orders
+GROUP BY date
+ORDER BY date;
