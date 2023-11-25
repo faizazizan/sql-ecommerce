@@ -1,0 +1,5 @@
+SELECT DATE_FORMAT(o.order_date, '%Y-%m') AS month,
+       SUM(o.order_total - od.total_cost) AS gross_profit
+FROM orders o
+JOIN order_details od ON o.order_id = od.order_id
+GROUP BY month;
