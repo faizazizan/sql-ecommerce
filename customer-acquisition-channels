@@ -1,0 +1,3 @@
+SELECT source, COUNT(customer_id) AS customer_count
+FROM customers
+GROUP BY source;
