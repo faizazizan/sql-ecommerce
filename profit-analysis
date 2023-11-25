@@ -1,0 +1,2 @@
+SELECT SUM(order_total - total_cost) AS total_profit
+FROM orders;
