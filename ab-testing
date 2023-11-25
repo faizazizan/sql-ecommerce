@@ -1,0 +1,4 @@
+-- Assuming there's a column 'variant' in the orders table indicating the A/B variant
+SELECT variant, AVG(order_total) AS average_order_value
+FROM orders
+GROUP BY variant;
