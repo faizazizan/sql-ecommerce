@@ -1,0 +1,6 @@
+SELECT DATE_FORMAT(order_date, '%Y-%m') AS cohort,
+       DATE_FORMAT(order_date, '%Y-%m') AS order_month,
+       COUNT(DISTINCT customer_id) AS customer_count
+FROM orders
+GROUP BY cohort, order_month
+ORDER BY cohort, order_month;
