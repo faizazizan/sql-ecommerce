@@ -1,0 +1,7 @@
+SELECT a.product_id AS product1, 
+       b.product_id AS product2,
+       COUNT(DISTINCT a.order_id) AS co_purchase_count
+FROM order_details a
+JOIN order_details b ON a.order_id = b.order_id AND a.product_id < b.product_id
+GROUP BY product1, product2
+ORDER BY co_purchase_count DESC;
