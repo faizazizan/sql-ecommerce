@@ -1,0 +1,4 @@
+SELECT customer_id, COUNT(order_id) AS abandoned_carts
+FROM orders
+WHERE order_status = 'cart'
+GROUP BY customer_id;
