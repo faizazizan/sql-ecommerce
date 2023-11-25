@@ -1,0 +1,11 @@
+SELECT customer_id,
+       CASE
+           WHEN total_spent >= 1000 THEN 'High Value'
+           WHEN total_spent >= 500 THEN 'Medium Value'
+           ELSE 'Low Value'
+       END AS customer_segment
+FROM (
+    SELECT customer_id, SUM(order_total) AS total_spent
+    FROM orders
+    GROUP BY customer_id
+) AS customer_totals;
