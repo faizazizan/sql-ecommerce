@@ -1,0 +1,2 @@
+SELECT SUM(order_total) AS total_revenue
+FROM orders;
