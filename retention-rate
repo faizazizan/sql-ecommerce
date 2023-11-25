@@ -1,0 +1,3 @@
+SELECT COUNT(DISTINCT customer_id) AS returning_customers
+FROM orders
+WHERE order_date <= (SELECT DATE_ADD(MIN(order_date), INTERVAL 1 YEAR) FROM orders);
