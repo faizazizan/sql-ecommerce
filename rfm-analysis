@@ -1,0 +1,7 @@
+SELECT customer_id,
+       DATEDIFF(NOW(), MAX(order_date)) AS recency,
+       COUNT(DISTINCT order_id) AS frequency,
+       SUM(order_total) AS monetary_value
+FROM orders
+GROUP BY customer_id
+ORDER BY recency, frequency DESC, monetary_value DESC;
